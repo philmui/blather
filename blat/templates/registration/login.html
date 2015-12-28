@@ -1,0 +1,10 @@
+{% extends "blat/master.html" %}
+{% block title %}Blather Login{% endblock %}
+{% block content %}
+	<form action="{% url 'login' %}" method="post">
+		<input type="hidden" name="next" value={{ next }}>
+		{{ form.as_p }}
+		<button type="submit">Login</button>
+		{% csrf_token %}
+	</form>
+{% endblock %}

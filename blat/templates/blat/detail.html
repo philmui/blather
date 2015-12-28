@@ -1,0 +1,17 @@
+{% extends "blat/master.html" %}
+{% load humanize %}
+
+{% block title %}Details{% endblock %}
+{% block content %}
+	<dl>
+		<dd>{{blat.text}}</dd>
+		<dt>{{blat.created_on}}
+			({{blat.created_on|naturaltime}})
+			{% if blat.via %}
+				<a href="{{blat.via}}">/via</a>
+			{% endif %}
+		</dt>
+	</dl>
+	<hr>
+	<a href="{% url 'homepage' %}">Home</a>
+{% endblock %}
